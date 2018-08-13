@@ -128,17 +128,17 @@ defmodule Couchex.Client do
   end
 
   defp make_path(db, %{list: list, view: view_path}) do
-    [design, view] = String.split(String.trim_leading(view_path, ?/), "/", parts: 2)
+    [design, view] = String.split(String.trim_leading(view_path, "?/"), "/", parts: 2)
     "#{db}/_design/#{design}/_list/#{list}/#{view}"
   end
 
   defp make_path(db, %{show: show_path}) do
-    [design, show] = String.split(String.trim_leading(show_path, ?/), "/", parts: 2)
+    [design, show] = String.split(String.trim_leading(show_path, "?/"), "/", parts: 2)
     "#{db}/_design/#{design}/_show/#{show}"
   end
 
   defp make_path(db, %{view: view_path}) do
-    [design, view] = String.split(String.trim_leading(view_path, ?/), "/", parts: 2)
+    [design, view] = String.split(String.trim_leading(view_path, "?/"), "/", parts: 2)
     "#{db}/_design/#{design}/_view/#{view}"
   end
 
