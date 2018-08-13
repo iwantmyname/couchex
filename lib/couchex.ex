@@ -7,7 +7,7 @@ defmodule Couchex do
     import Supervisor.Spec, warn: false
 
     pool_name = :couchex
-    options = [{:timeout, 150000}, {:max_connections, 100}]
+    options = [{:timeout, 150_000}, {:max_connections, 100}]
     :ok = :hackney_pool.start_pool(pool_name, options)
 
     children = [
